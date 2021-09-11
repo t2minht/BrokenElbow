@@ -5,9 +5,16 @@ api = azapi.AZlyrics("google", accuracy=0.5)
 
 def songsearch():
     title = input("Song: ")
+    artist = input("Artist (Optional): ")
     api.title = title
+    if artist != '':
+        api.artist = artist
     api.getLyrics(save = False, ext = 'txt')
+
+    print("\n" + api.title + " - " + api.artist)
     print(api.lyrics)
+    print("\n------------------------")
+    print(api.title + " - " + api.artist)
 
 def artistsearch():
     artist = input("Artist: ")
