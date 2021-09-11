@@ -3,13 +3,31 @@ import azapi
 api = azapi.AZlyrics("google", accuracy=0.5)
 
 
-def songsearch():
-    title = input("Song: ")
-    api.title = title
+def song_search():
+    a = False
+    b = False
+    while not(a and b):
+        title = input("Song: ")
+        artist = input("Artist: ")
+        if title != '':
+            a = True
+            api.title = title
+        if artist != '':
+            b = True
+            api.artist = artist
+        if not(a and b):
+            print("--------")
+            print("MISSING INPUTS. TRY AGAIN")
+            print("--------")
     api.getLyrics(save = False, ext = 'txt')
-    print(api.lyrics)
 
-def artistsearch():
+    print("\n" + api.title + " - " + api.artist)
+    print(api.lyrics)
+    print("\n------------------------")
+    print(api.title + " - " + api.artist)
+
+
+def artist_search():
     artist = input("Artist: ")
     api.artist = artist
     results = api.getSongs()
@@ -24,6 +42,6 @@ def artistsearch():
             print("\tyear = " + year)
         print((results[title])['url'])
 
-    songsearch()
+    song_search()
 
 
