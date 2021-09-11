@@ -3,6 +3,6 @@ from search import *
 
 choice = input("Song or Artist Search: (song/artist): ")
 if choice == "song":
-    songsearch()
+    song_search()
 elif choice == "artist":
-    artistsearch()
+    artist_search()
