@@ -6,12 +6,16 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/search", methods = ["POST", "GET"])
+@app.route("/search")
 def search():
-    if request.method == "POST":
-        userArtist = request.form.get['userArtist']
-        userSong = request.form.get['userSong']
-        print(userArtist, userSong)
     return render_template("search.html")
+
+@app.route("/search", methods = ["POST"])
+def search_post():
+        artistName = request.form.get('artistName')
+        songName = request.form.get('songName')
+        
+        print(artistName, songName)
+
 if __name__ == "__main__":
     app.run(debug = True)
