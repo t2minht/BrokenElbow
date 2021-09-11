@@ -14,8 +14,14 @@ def search():
 def search_post():
         artistName = request.form.get('artistName')
         songName = request.form.get('songName')
-        
+
         print(artistName, songName)
+        
+        return redirect(url_for('results'))
+
+@app.route("/results")
+def results():
+    return render_template("results.html")
 
 if __name__ == "__main__":
     app.run(debug = True)
