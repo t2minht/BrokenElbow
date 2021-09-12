@@ -1,4 +1,6 @@
 import azapi
+from requester import Requester
+from tools import *
 
 api = azapi.AZlyrics("google", accuracy=0.5)
 
@@ -42,6 +44,6 @@ def artist_search():
             print("\tyear = " + year)
         print((results[title])['url'])
 
-    song_search()
+
 
 
