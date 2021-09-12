@@ -62,7 +62,7 @@ body {
 }
 
 .topnav .search-container {
-  float: right;
+  float: left;
 }
 
 .topnav input[type=text] {
@@ -74,8 +74,8 @@ body {
 
 .topnav .search-container button {
   float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
+  padding: 6px;
+  margin-top: 7px;
   margin-right: 16px;
   background: #ddd;
   font-size: 17px;
@@ -118,8 +118,8 @@ body {
 
 /* Main column */
 .main {   
-  -ms-flex: 70%; /* IE10 */
-  flex: 85%;
+  -ms-flex: 100%; /* IE10 */
+  flex: 100%;
   background-color: white;
   padding: 20px;
 }
@@ -144,7 +144,6 @@ body {
 
 <div class="navbar"> 
   <a href="/#">Search</a>
-  <div class="search-container">
     <form method = "POST", action="/">
       <input type="text" placeholder="Enter Name of Artist" id="artistName" name = "artistName">
       <input type="text" placeholder="Enter Name of Song" id="songName" name = "songName">
