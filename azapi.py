@@ -43,9 +43,6 @@ class AZlyrics(Requester):
             lyrics (str): Lyrics of the detected song
         """
 
-        # Best cooldown is 5 sec
-        time.sleep(sleep)
-
         link = url
 
         if not url:
