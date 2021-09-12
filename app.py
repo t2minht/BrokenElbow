@@ -25,7 +25,7 @@ def search_post():
 
 @app.route("/results")
 def results():
-    return render_template("results.html", text=lyrics.lyrics.split("\n"))
+    return render_template("results.html", songName = lyrics.title.upper(), artist = lyrics.artist.title(),text=lyrics.lyrics.split("\n"))
 
 
 if __name__ == "__main__":
