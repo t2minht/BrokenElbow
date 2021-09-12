@@ -5,18 +5,12 @@ app = Flask(__name__)
 
 lyrics = azapi.AZlyrics("google", accuracy=0.5)
 
-
 @app.route("/")
-def home():
-    return render_template("index.html")
-
-
-@app.route("/search")
 def search():
     return render_template("search.html")
 
 
-@app.route("/search", methods=["POST"])
+@app.route("/", methods=["POST"])
 def search_post():
     artistName = request.form.get('artistName')
     songName = request.form.get('songName')
