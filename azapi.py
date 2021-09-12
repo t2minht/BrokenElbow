@@ -41,7 +41,9 @@ class AZlyrics(Requester):
 
         Returns:
             lyrics (str): Lyrics of the detected song
-        """
+        """ 
+        
+        #Maybe take out sleep
         time.sleep(sleep)
         link = url
 
