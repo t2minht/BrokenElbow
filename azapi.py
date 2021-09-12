@@ -29,7 +29,7 @@ class AZlyrics(Requester):
         self.lyrics = ''
         self.songs = {}
 
-    def getLyrics(self, url=None, ext='txt', save=False, path='', sleep=3):
+    def getLyrics(self, url=None, ext='txt', save=False, path='', sleep=1.2):
         """
         Reterive Lyrics for a given song details
 
@@ -42,7 +42,7 @@ class AZlyrics(Requester):
         Returns:
             lyrics (str): Lyrics of the detected song
         """
-
+        time.sleep(sleep)
         link = url
 
         if not url:

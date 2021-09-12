@@ -19,12 +19,13 @@ def search_post():
     lyrics.title = songName
 
     lyrics.getLyrics(save = False, ext = 'txt')
+
     return redirect(url_for('results'))
 
 
 @app.route("/results")
 def results():
-    return render_template("results.html", text=lyrics.lyrics.replace('\n', '<br>'))
+    return render_template("results.html", text=lyrics.lyrics.split("\n"))
 
 
 if __name__ == "__main__":

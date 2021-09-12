@@ -165,8 +165,9 @@ body {
 <div class="row">
   <div class="main">
     <h2>SONG TITLE</h2>
-    <p>Lyrics</p>
-    <p>{{text}}</p>
+    {%for i in text%}
+    <p> <center>{{i}} </center></p>
+    {%endfor%}
   </div>
 </div>
 
