@@ -155,15 +155,11 @@ body {
 <div class="navbar"> 
   <a href="/#">Search</a>
   <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Artist..." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+    <form method = "POST", action="/">
+      <input type="text" placeholder="Enter Name of Artist" id="artistName" name = "artistName">
+      <input type="text" placeholder="Enter Name of Song" id="songName" name = "songName">
+      <button type="submit">Search</button>
     </form>
-    <div class="search-container">
-      <form action="/action_page.php">
-        <input type="text" placeholder="Song Title.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
 </div>
 
 <div class="row">
