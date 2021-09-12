@@ -61,6 +61,49 @@ body {
   color: white;
 }
 
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
 /* Column container */
 .row {  
   display: -ms-flexbox; /* IE10 */
@@ -71,12 +114,7 @@ body {
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
-.side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 15%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
+
 
 /* Main column */
 .main {   
@@ -87,18 +125,8 @@ body {
 }
 
 /* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
 
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
+
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
@@ -126,28 +154,24 @@ body {
 
 <div class="navbar"> 
   <a href="/#">Search</a>
-  <a href="#" class="active">Song</a>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Artist..." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Song Title.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
 </div>
 
 <div class="row">
-  <div class="side">
-    <h2>Album Cover</h2>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <h3>More Songs From The Album</h3>
-    <div class="fakeimg" style="height:60px;">Song 1</div><br>
-    <div class="fakeimg" style="height:60px;">Song 2</div><br>
-    <div class="fakeimg" style="height:60px;">Song 3</div>
-  </div>
   <div class="main">
     <h2>SONG TITLE</h2>
-    <div class="fakeimg" style="height:200px;">Band/Artist Photo</div>
     <p>Lyrics</p>
     <p>{{text}}</p>
   </div>
-</div>
-
-<div class="footer">
-  <h2>Footer</h2>
 </div>
 
 </body>
